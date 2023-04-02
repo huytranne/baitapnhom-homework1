@@ -1,0 +1,21 @@
+a)
+
+The number of columns with m1’s out of n is (n/m). The number of thesecolumns that have no 1 in one of the k selected rows is ((n−k)/m). The probability of no 1 in thechosen krows is therefore the latter divided by the former. If we expand the binomial coefficientsin terms of factorials, we get (n−k)!m!(n−m)!/(m!(n−k−m)!n!). The m!’s cancel, and when we reorganize we canwrite this expression as ((n−k)/n)*((n−k−1)/(n−1))· · · (n−k−m+1)/(n−m+1 ). Each of the mfactors is at most ((n−k)/n).Thus, their product is at most ((n−k)/n)^m.
+
+b) 
+
+We want ((n−k)/n)^m≤e^−10. Equivalently, ((1 −k)/n)m< e−10. If we multiplyand divide the exponent by n/k, we see this condition is equivalent to ((1 −k/n)^n/k)^mk/n ≤e^(−10). 
+
+Since we assume k << n,  we can approximate ((1 −k)/n)^(n/k) by 1/e. That makes the desired
+condition e^−mk/n ≤e^−10. 
+
+Thus, the first exponent must be less than or equal to the second; i.e.,−mk/n ≤ −10, or mk/n ≥10. 
+
+That, in turn means k≥10n/m, so the correct answer, thelower bound on k, is 10n/m.
+
+c) 
+
+The two columns (sets) are [0,1,0]Tand [0,1,1]T. Jaccard similarity = 0.5. But if the cycle starts at either of the first two rows, the minhash values are the same, whileif the cycle starts at the last row, then the minhash values differ. Thus, the probability of theminhash values agreeing is 2/3, when only cyclic permutations are allowed.
+
+
+
